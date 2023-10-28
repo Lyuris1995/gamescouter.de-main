@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gamescouter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="src/assets/Nunito-Italic-VariableFont_wght.ttf" rel="stylesheet">
+    <link rel="stylesheet/less" type="text/css" href="src/style.less" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container-fluid "><!--fixed-top-->
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="src/assets/gamescouter-logo.png" alt="Gamescouter Logo" id="gamescouterLogo"/></a>
+          <button class="navbar-toggler position-absolute top-0 end-50" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse position-absolute end-0" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Games</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Über uns</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><button class="custom-btn btn-13">Anmelden</button></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="container-fluid" id="game-timeline">
+    <div class="filter-container">
+      <i class="fa-solid fa-filter" id="filter-button" onclick="toggleFilterMethods()"></i>
+      <div class="filter-param">
+        <ul id="filter-list">
+          <li><a href="#" id="filter-method" onclick="toggleGenreFilter()">Genre</a>
+            <ul class="filter-option" id="genre-filter">
+              <li><a href="#" id="rpg">RPG</a></li>
+              <li><a href="#" id="fps">FPS</a></li>
+              <li><a href="#" id="adventure">Adventure</a></li>
+              <li><a href="#" id="action">Action</a></li>
+              <li><a href="#" id="roguelike">Rogue-Like</a></li>
+            </ul>
+          </li>
+          <li><a href="#" id="filter-method" onclick="toggleDateFilter()">Release Datum</a>
+            <ul class="filter-option" id="date-filter">
+              <li><input type="date" id="date-input"></li>
+            </ul>
+          </li>
+          <li><a href="#" id="filter-method" onclick="togglePublisherFilter()">Publisher</a>
+            <ul class="filter-option" id="publisher-filter" >
+              <li><input type="text" id="publisher-input"></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+      <div class="row flex-row flex-nowrap">
+        <div class="card col-12 col-sm-6 col-md-4 col-lg-3" style="width: 18rem;" id="card">
+            <img src="src/assets/gamescouter-logo.png" class="card-img-top" alt="...">
+            <a href="#"><button class="custom-btn btn-13 card-button geklickt" id="card-button" onclick="toggleCardContent(this)">Mehr Infos</button></a>
+              <div class="card-body card-content" id="card-content">
+                <h5 class="game-title" >Titel des Spiels</h5>
+                <p class="game-tags">Game Tags hier</p>
+                <iframe width="150" height="80" src="https://www.youtube.com/embed/vjTKruczGX4?si=LHDMzJbr5DN5a7C7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div class="release-date">
+                <p>19.10.2023</p>
+              </div>
+          </div>
+          <div class="card col-12 col-sm-6 col-md-4 col-lg-3" style="width: 18rem;" id="card">
+            <img src="src/assets/gamescouter-logo.png" class="card-img-top" alt="...">
+            <a href="#"><button class="custom-btn btn-13 card-button geklickt" id="card-button" onclick="toggleCardContent(this)">Mehr Infos</button></a>
+              <div class="card-body card-content" id="card-content">
+                <h5 class="game-title" >Titel des Spiels</h5>
+                <p class="game-tags">Game Tags hier</p>
+                <iframe width="150" height="80" src="https://www.youtube.com/embed/vjTKruczGX4?si=LHDMzJbr5DN5a7C7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div class="release-date">
+                <p>19.10.2023</p>
+              </div>
+          </div>
+          <div class="card col-12 col-sm-6 col-md-4 col-lg-3" style="width: 18rem;" id="card">
+            <img src="src/assets/gamescouter-logo.png" class="card-img-top" alt="...">
+            <a href="#"><button class="custom-btn btn-13 card-button geklickt" id="card-button" onclick="toggleCardContent(this)">Mehr Infos</button></a>
+              <div class="card-body card-content" id="card-content">
+                <h5 class="game-title" >Titel des Spiels</h5>
+                <p class="game-tags">Game Tags hier</p>
+                <iframe width="150" height="80" src="https://www.youtube.com/embed/vjTKruczGX4?si=LHDMzJbr5DN5a7C7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div class="release-date">
+                <p>19.10.2023</p>
+              </div>
+          </div>
+          <div class="card col-12 col-sm-6 col-md-4 col-lg-3" style="width: 18rem;" id="card">
+            <img src="src/assets/gamescouter-logo.png" class="card-img-top" alt="...">
+            <a href="#"><button class="custom-btn btn-13 card-button geklickt" id="card-button" onclick="toggleCardContent(this)">Mehr Infos</button></a>
+              <div class="card-body card-content" id="card-content">
+                <h5 class="game-title" >Titel des Spiels</h5>
+                <p class="game-tags">Game Tags hier</p>
+                <iframe width="150" height="80" src="https://www.youtube.com/embed/vjTKruczGX4?si=LHDMzJbr5DN5a7C7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div class="release-date">
+                <p>19.10.2023</p>
+              </div>
+          </div>
+          <div class="card col-12 col-sm-6 col-md-4 col-lg-3" style="width: 18rem;" id="card">
+            <img src="src/assets/gamescouter-logo.png" class="card-img-top" alt="...">
+            <a href="#"><button class="custom-btn btn-13 card-button geklickt" id="card-button" onclick="toggleCardContent(this)">Mehr Infos</button></a>
+              <div class="card-body card-content" id="card-content">
+                <h5 class="game-title" >Titel des Spiels</h5>
+                <p class="game-tags">Game Tags hier</p>
+                <iframe width="150" height="80" src="https://www.youtube.com/embed/vjTKruczGX4?si=LHDMzJbr5DN5a7C7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div class="release-date">
+                <p>19.10.2023</p>
+              </div>
+          </div>
+          <div class="card col-12 col-sm-6 col-md-4 col-lg-3" style="width: 18rem;" id="card">
+            <img src="src/assets/gamescouter-logo.png" class="card-img-top" alt="...">
+            <a href="#"><button class="custom-btn btn-13 card-button geklickt" id="card-button" onclick="toggleCardContent(this)">Mehr Infos</button></a>
+              <div class="card-body card-content" id="card-content">
+                <h5 class="game-title" >Titel des Spiels</h5>
+                <p class="game-tags">Game Tags hier</p>
+                <iframe width="150" height="80" src="https://www.youtube.com/embed/vjTKruczGX4?si=LHDMzJbr5DN5a7C7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div class="release-date">
+                <p>19.10.2023</p>
+              </div>
+          </div>
+          <div class="card col-12 col-sm-6 col-md-4 col-lg-3" style="width: 18rem;" id="card">
+            <img src="src/assets/gamescouter-logo.png" class="card-img-top" alt="...">
+            <a href="#"><button class="custom-btn btn-13 card-button geklickt" id="card-button" onclick="toggleCardContent(this)">Mehr Infos</button></a>
+              <div class="card-body card-content" id="card-content">
+                <h5 class="game-title" >Titel des Spiels</h5>
+                <p class="game-tags">Game Tags hier</p>
+                <iframe width="150" height="80" src="https://www.youtube.com/embed/vjTKruczGX4?si=LHDMzJbr5DN5a7C7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div class="release-date">
+                <p>19.10.2023</p>
+              </div>
+          </div>
+          <div class="card col-12 col-sm-6 col-md-4 col-lg-3" style="width: 18rem;" id="card">
+            <img src="src/assets/gamescouter-logo.png" class="card-img-top" alt="...">
+            <a href="#"><button class="custom-btn btn-13 card-button geklickt" id="card-button" onclick="toggleCardContent(this)">Mehr Infos</button></a>
+              <div class="card-body card-content" id="card-content">
+                <h5 class="game-title" >Titel des Spiels</h5>
+                <p class="game-tags">Game Tags hier</p>
+                <iframe width="150" height="80" src="https://www.youtube.com/embed/vjTKruczGX4?si=LHDMzJbr5DN5a7C7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div class="release-date">
+                <p>19.10.2023</p>
+              </div>
+          </div>
+          <div class="card col-12 col-sm-6 col-md-4 col-lg-3" style="width: 18rem;" id="card">
+            <img src="src/assets/gamescouter-logo.png" class="card-img-top" alt="...">
+            <a href="#"><button class="custom-btn btn-13 card-button geklickt" id="card-button" onclick="toggleCardContent(this)">Mehr Infos</button></a>
+              <div class="card-body card-content" id="card-content">
+                <h5 class="game-title" >Titel des Spiels</h5>
+                <p class="game-tags">Game Tags hier</p>
+                <iframe width="150" height="80" src="https://www.youtube.com/embed/vjTKruczGX4?si=LHDMzJbr5DN5a7C7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div class="release-date">
+                <p>19.10.2023</p>
+              </div>
+          </div>
+        </div>
+    </div>
+    <script src="src/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/less" ></script>
+    <script src="https://kit.fontawesome.com/f94a4c3473.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>

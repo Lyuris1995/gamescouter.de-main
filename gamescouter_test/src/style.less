@@ -1,0 +1,286 @@
+@BackgroundColor: rgba(56, 56, 56, 1);
+@BrandColor: #32B2A3;
+@BrandSecondColor: rgba(70, 160, 150, 100%);
+@TextColor: #CBCBCB;
+@fontFamily: 'Nunito', sans-serif;
+
+body, html {
+    background-color: @BackgroundColor !important;
+    font-family: @fontFamily !important;
+    color: @TextColor;
+    overflow: hidden;
+    font-size: 12px;
+
+    .custom-btn {
+        width: 140px;
+        height: 40px;
+        color: @BackgroundColor;
+        border-radius: 5px;
+        padding: 10px 25px;
+        font-family: 'Lato', sans-serif;
+        font-weight: 500;
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block;
+         box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+         7px 7px 20px 0px rgba(0,0,0,.1),
+         4px 4px 5px 0px rgba(0,0,0,.1);
+        outline: none;
+      }
+    /* 13 */
+    .btn-13 {
+        background-color: @BrandSecondColor;
+        background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
+        border: none;
+        z-index: 1;
+    }
+    .btn-13:after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 5px;
+        background-color: @BrandSecondColor;
+        background-image: linear-gradient(315deg, @BrandColor 0%, #96e4df 74%);
+        box-shadow:
+        -7px -7px 20px 0px #fff9,
+        -4px -4px 5px 0px #fff9,
+        7px 7px 20px 0px #0002,
+        4px 4px 5px 0px #0001;
+        transition: all 0.3s ease;
+    }
+    .btn-13:hover {
+        color: @BackgroundColor;
+    }
+    .btn-13:hover:after {
+        top: 0;
+        height: 100%;
+    }
+    .btn-13:active {
+        top: 2px;
+    }
+
+    .navbar {
+        background-color: @BackgroundColor !important;
+        border-bottom: 4px solid @BrandColor;
+
+        #gamescouterLogo {
+            width: 150px;
+            height: 150px;
+            margin-top: 0px;
+        }
+
+        .nav-link {
+            color: @TextColor;
+            margin-right: 5px;
+            margin-top: 0px;
+
+            &:hover {
+                color: @BrandColor;
+            }
+        }
+    }
+
+    #game-timeline {
+        box-sizing: border-box;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 0;
+        padding-bottom: 50px;
+        cursor: grab;
+        overflow: auto;
+        height: auto;
+        width: 100%;
+
+        .row {
+            padding-top: 40px;
+            height: 350px;
+            border-bottom: 4px solid @BrandColor;
+        }
+
+        .card {
+            margin-right: 10px;
+            position: relative;
+            padding: 0;
+            border: 2px solid @BrandColor;
+            background-color: @BackgroundColor;
+            height: 155px;
+            color: @TextColor;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 3px 3px 3px @BrandSecondColor;
+            border-radius: 5px;
+            margin: 10px;
+            align-items: center;
+            text-align: center;
+            transition: 0.3s ease-in-out; 
+
+            &:after {
+                content: "";
+                border: 2px dashed @BrandColor;
+                position: absolute;
+                height: 180px;
+                bottom: -180px;
+                left: 50%;
+                right: 50%;
+                transition: 0.3s ease-in-out;
+        }
+
+            img {
+                height: 100px;
+                width: 100px;
+            }
+            &.active {
+                height: 290px;
+                margin: 7px;
+                box-shadow: 5px 10px 5px @BrandSecondColor;
+
+                &:after {
+                    height: 45px;
+                    bottom: -45px;
+                }
+            }
+
+
+
+            .card-content {
+                opacity: 0;
+                pointer-events: none;
+                transition: 0.3s ease-in-out;
+
+                &.active {
+                    opacity: 1;
+                    pointer-events: auto;
+                    transition-delay: 0.3s;
+
+                }
+            }
+
+            .release-date {
+                margin-top: 30px;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    background-color: @BrandColor;
+                    border-radius: 50%;
+                    bottom: -5px;
+                    left: 51%;
+                    right: 49%;
+                    transform: translateX(-50%);
+            }
+            }
+            a {
+                width: 140px;
+            }
+        }
+        .filter-container {
+            padding: 10px;
+            height: 20px;
+            width: 20px;
+            display: flex;
+            left: 5%;
+            top: 15%;
+            position: fixed;
+            z-index: 2;
+
+                #filter-button {
+                    color: @TextColor;
+                    margin: 0px;
+                    cursor: pointer;
+                    
+                    &:hover {
+                        color: @BrandSecondColor;
+                    }
+                }
+
+                #filter-list {
+                    display: flex;
+                    list-style-type: none;
+                    border: 2px solid @BrandColor;
+                    border-radius: 13px;
+                    opacity: 0;
+                    width: 350px;
+                    pointer-events: none;
+                    transition: 0.3s ease-in-out;
+    
+                    &.active {
+                        opacity: 1;
+                        pointer-events: all;
+                        margin: 10px;
+                        height: 150px;
+                        background-color: @BackgroundColor;
+                    }
+    
+                    li {
+                        flex-direction: row;
+                        margin-bottom: 10px;
+                        margin-left: 5px;
+                        margin: 0px;
+                        
+                        a {
+                            color: @TextColor;
+                            text-decoration: none;
+                            &:hover {
+                                color: @BrandColor;
+                            }
+                        }
+
+                        ul {
+                            display: flex;
+                            flex-direction: column;
+                        }
+                    
+                        li {
+                            list-style-type: none;
+                        }
+
+                        .filter-option {
+                            margin: 0;
+                            padding: 0;
+                            display: flex;
+                            list-style-type: none;
+                            opacity: 0;
+                            width: 100px;
+                            pointer-events: none;
+                            transition: 0.3s ease-in-out;
+                            white-space: break-spaces;
+                            
+                            
+                            &.active {
+                                opacity: 1;
+                                pointer-events: all;
+                                /* margin-bottom: 10px; */
+                            }
+
+                            a {
+                                margin: 5px;
+                                border: 2px solid @BrandColor;
+                                border-radius: 5px;
+
+                                &:hover {
+                                    background-color: @BrandColor;
+                                    color: @BackgroundColor;
+                                }
+                            }
+
+                            input {
+                                border-radius: 5px;
+                                box-shadow: 2px 2px 2px @BrandColor;
+                                margin: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+    }
+}
+
