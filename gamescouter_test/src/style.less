@@ -153,6 +153,7 @@ body, html {
                 opacity: 0;
                 pointer-events: none;
                 transition: 0.3s ease-in-out;
+                user-select: text;
 
                 &.active {
                     opacity: 1;
@@ -208,10 +209,14 @@ body, html {
                     border: 2px solid @BrandColor;
                     border-radius: 13px;
                     opacity: 0;
-                    width: 350px;
+                    width: 250px;
                     pointer-events: none;
                     transition: 0.3s ease-in-out;
-    
+                    
+                    @media screen and (min-width: 450px) {
+                        width: 450px;
+                    }
+
                     &.active {
                         opacity: 1;
                         pointer-events: all;
@@ -249,11 +254,13 @@ body, html {
                             display: flex;
                             list-style-type: none;
                             opacity: 0;
-                            width: 100px;
+                            width: 80px;
                             pointer-events: none;
                             transition: 0.3s ease-in-out;
                             white-space: break-spaces;
-                            
+                            @media screen and (min-width: 450px) {
+                                width: 150px;
+                            }
                             
                             &.active {
                                 opacity: 1;
@@ -279,6 +286,11 @@ body, html {
                             }
                         }
                     }
+                }
+
+                @media screen and (max-height: 700px) {
+                    margin-top: 50px;
+                    padding: 0px;
                 }
             }
     }
