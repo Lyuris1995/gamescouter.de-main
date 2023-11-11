@@ -11,14 +11,15 @@ body, html {
     overflow: hidden;
     font-size: 12px;
 
+//Custom Button
     .custom-btn {
-        width: 140px;
-        height: 40px;
+        width: 120px;
+        height: 35px;
         color: @BackgroundColor;
         border-radius: 5px;
         padding: 10px 25px;
-        font-family: 'Lato', sans-serif;
-        font-weight: 500;
+        font-family: @fontFamily;
+        font-weight: 700;
         background: transparent;
         cursor: pointer;
         transition: all 0.3s ease;
@@ -29,7 +30,7 @@ body, html {
          4px 4px 5px 0px rgba(0,0,0,.1);
         outline: none;
       }
-    /* 13 */
+
     .btn-13 {
         background-color: @BrandSecondColor;
         background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
@@ -64,7 +65,9 @@ body, html {
     .btn-13:active {
         top: 2px;
     }
+// Custom Button ende
 
+//Navbar
     .navbar {
         background-color: @BackgroundColor !important;
         border-bottom: 4px solid @BrandColor;
@@ -86,6 +89,7 @@ body, html {
         }
     }
 
+//Zeitleiste zum anzeigen der Videospiele
     #game-timeline {
         box-sizing: border-box;
         position: relative;
@@ -183,6 +187,8 @@ body, html {
                 width: 140px;
             }
         }
+        
+// Filter komponente
         .filter-container {
             padding: 10px;
             height: 20px;
@@ -287,12 +293,11 @@ body, html {
                         }
                     }
                 }
-
-                @media screen and (max-height: 700px) {
-                    margin-top: 50px;
-                    padding: 0px;
-                }
             }
     }
 }
 
+/* @media screen and (max-height: 700px) {
+    margin-top: 50px;
+    padding: 0px;
+} */
