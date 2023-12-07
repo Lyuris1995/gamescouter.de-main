@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
     ele.addEventListener('mousedown', mouseDownHandler);
 });
 
-
 function toggleCardContent(button) {
 
     const card = button.closest(".card");
@@ -84,3 +83,5 @@ function toggleDateFilter() {
 function togglePublisherFilter() {
     document.getElementById("publisher-filter").classList.toggle("active");
 }
+
+
