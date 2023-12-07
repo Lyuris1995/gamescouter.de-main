@@ -11,14 +11,15 @@ body, html {
     overflow: hidden;
     font-size: 12px;
 
+//Custom Button
     .custom-btn {
-        width: 140px;
-        height: 40px;
+        width: 120px;
+        height: 35px;
         color: @BackgroundColor;
         border-radius: 5px;
         padding: 10px 25px;
-        font-family: 'Lato', sans-serif;
-        font-weight: 500;
+        font-family: @fontFamily;
+        font-weight: 700;
         background: transparent;
         cursor: pointer;
         transition: all 0.3s ease;
@@ -29,7 +30,7 @@ body, html {
          4px 4px 5px 0px rgba(0,0,0,.1);
         outline: none;
       }
-    /* 13 */
+
     .btn-13 {
         background-color: @BrandSecondColor;
         background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
@@ -64,7 +65,9 @@ body, html {
     .btn-13:active {
         top: 2px;
     }
+// Custom Button ende
 
+//Navbar
     .navbar {
         background-color: @BackgroundColor !important;
         border-bottom: 4px solid @BrandColor;
@@ -85,7 +88,9 @@ body, html {
             }
         }
     }
+//Navbar ende
 
+//Zeitleiste zum anzeigen der Videospiele
     #game-timeline {
         box-sizing: border-box;
         position: relative;
@@ -183,8 +188,12 @@ body, html {
                 width: 140px;
             }
         }
+//Zeitleiste ende
+        
+// Filter komponente
         .filter-container {
-            padding: 10px;
+            padding-top: 50px;
+            padding-left: 10px;
             height: 20px;
             width: 20px;
             display: flex;
@@ -204,18 +213,20 @@ body, html {
                 }
 
                 #filter-list {
-                    display: flex;
+                    left: 0;
                     list-style-type: none;
                     border: 2px solid @BrandColor;
-                    border-radius: 13px;
+                    border-radius: 10px;
                     opacity: 0;
-                    width: 250px;
+                    width: 320px;
                     pointer-events: none;
                     transition: 0.3s ease-in-out;
-                    
-                    @media screen and (min-width: 450px) {
-                        width: 450px;
-                    }
+                    display: grid;
+                    grid-template-columns: 1fr repeat(2, 2fr);
+                    grid-template-rows: repeat(5, 1fr);
+                    grid-column-gap: 5px;
+                    grid-row-gap: 5px;
+                    overflow: hidden;
 
                     &.active {
                         opacity: 1;
@@ -226,11 +237,6 @@ body, html {
                     }
     
                     li {
-                        flex-direction: row;
-                        margin-bottom: 10px;
-                        margin-left: 5px;
-                        margin: 0px;
-                        
                         a {
                             color: @TextColor;
                             text-decoration: none;
@@ -249,23 +255,19 @@ body, html {
                         }
 
                         .filter-option {
+                            display: flex;
                             margin: 0;
                             padding: 0;
-                            display: flex;
                             list-style-type: none;
                             opacity: 0;
                             width: 80px;
                             pointer-events: none;
                             transition: 0.3s ease-in-out;
                             white-space: break-spaces;
-                            @media screen and (min-width: 450px) {
-                                width: 150px;
-                            }
                             
                             &.active {
                                 opacity: 1;
                                 pointer-events: all;
-                                /* margin-bottom: 10px; */
                             }
 
                             a {
@@ -283,6 +285,7 @@ body, html {
                                 border-radius: 5px;
                                 box-shadow: 2px 2px 2px @BrandColor;
                                 margin: 5px;
+                                width: 80px;
                             }
                         }
                     }
@@ -294,4 +297,4 @@ body, html {
             }
     }
 }
-
+//Filter ende

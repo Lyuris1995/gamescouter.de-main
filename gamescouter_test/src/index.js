@@ -1,3 +1,5 @@
+
+//Funktion für das Horizontale scrollen
 document.addEventListener('DOMContentLoaded', function () {
     const ele = document.getElementById('game-timeline');
     ele.style.cursor = 'grab';
@@ -11,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         pos = {
             left: ele.scrollLeft,
             top: ele.scrollTop,
-            // Get the current mouse position
+            // aktuelle Mausposition
             x: e.clientX,
             y: e.clientY,
         };
@@ -21,10 +23,10 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     const mouseMoveHandler = function (e) {
-        // How far the mouse has been moved
+        // Wie weit die Maus bewegt wurde
         const dx = e.clientX - pos.x;
 
-        // Scroll the element
+        // Element wird gescrollt
         ele.scrollLeft = pos.left - dx;
     };
 
@@ -36,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.removeEventListener('mouseup', mouseUpHandler);
     };
 
-    // Attach the handler
+    // Eventhandler anbinden
     ele.addEventListener('mousedown', mouseDownHandler);
 });
 
@@ -57,6 +59,7 @@ function toggleCardContent(button) {
     }
 };
 
+//Funktion zum anzeigen der Filtermethoden (Genre, Datum, Publisher)
 function toggleFilterMethods() {
     const filterButton = document.getElementById("filter-button");
     const filterList = document.querySelector("#filter-list");
@@ -72,14 +75,17 @@ function toggleFilterMethods() {
     }
 };
 
+//Funktion zum anzeigen der Genre Filter
 function toggleGenreFilter() {
     document.getElementById("genre-filter").classList.toggle("active");
 }
 
+//Funktion zum anzeigen des Datum-Filters
 function toggleDateFilter() {
     document.getElementById("date-filter").classList.toggle("active");
 }
 
+//Funktion zum anzeigen des Publisher-Filters
 function togglePublisherFilter() {
     document.getElementById("publisher-filter").classList.toggle("active");
 }
